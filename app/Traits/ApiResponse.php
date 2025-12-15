@@ -11,7 +11,7 @@ trait ApiResponse
     protected function successResponse(
         mixed $data = null,
         string $message = 'Success',
-        int $code = 200
+        int $code = JsonResponse::HTTP_OK
     ): JsonResponse {
         return response()->json([
             'success' => true,
@@ -24,7 +24,7 @@ trait ApiResponse
 
     protected function errorResponse(
         string $message = 'Error',
-        int $code = 400,
+        int $code = JsonResponse::HTTP_BAD_REQUEST,
         mixed $data = null
     ): JsonResponse {
         return response()->json([
@@ -42,9 +42,9 @@ trait ApiResponse
     ): JsonResponse {
         return response()->json([
             'success' => false,
-            'code' => 422,
+            'code' => JsonResponse::HTTP_UNPROCESSABLE_ENTITY,
             'data' => $errors,
             'message' => $message,
-        ], 422);
+        ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
     }
 }
