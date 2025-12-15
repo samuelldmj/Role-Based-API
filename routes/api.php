@@ -6,7 +6,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\ExternalApiController;
-
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 //test route
 Route::get('/', function () {
@@ -15,7 +15,7 @@ Route::get('/', function () {
         'code' => 200,
         'data' => new \stdClass(),
         'message' => 'API is working',
-    ], 200);
+    ], JsonResponse::HTTP_OK);
 });
 
 //Public Routes (No Authentication Required)
@@ -109,5 +109,5 @@ Route::fallback(function () {
         'code' => 404,
         'data' => new \stdClass(),
         'message' => 'Route not found',
-    ], 404);
+    ], JsonResponse::HTTP_NOT_FOUND);
 });
