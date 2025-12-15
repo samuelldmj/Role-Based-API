@@ -18,7 +18,7 @@ A Laravel-based Role-Based Access Control (RBAC) API that provides comprehensive
 -   PHP 8.2 or higher
 -   Composer
 -   Node.js and npm
--   SQLite (default) or MySQL/PostgreSQL
+-   PostgreSQL(default)
 
 ## Installation
 
