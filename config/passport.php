@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'guard' => 'web',
+    'guard' => 'api',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,5 +42,54 @@ return [
     */
 
     'connection' => env('PASSPORT_CONNECTION'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Client UUIDs
+    |--------------------------------------------------------------------------
+    |
+    | By default, Passport uses auto-incrementing primary keys when assigning
+    | IDs to clients. However, if Passport is installed using the provided
+    | --uuids switch, this will be set to "true" and UUIDs will be used.
+    |
+    */
+
+    'client_uuids' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Personal Access Tokens Expire
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define the number of minutes that personal access tokens
+    | should remain valid. By default, they remain valid for one year.
+    |
+    */
+
+    'personal_access_tokens_expire_in' => null,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Access Token Expire
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define the number of minutes that access tokens should
+    | remain valid. By default, they remain valid for 15 minutes.
+    |
+    */
+
+    'tokens_expire_in' => null,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Refresh Token Expire
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define the number of minutes that refresh tokens should
+    | remain valid. By default, they remain valid for 30 days.
+    |
+    */
+
+    'refresh_tokens_expire_in' => null,
 
 ];
